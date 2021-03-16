@@ -15,8 +15,8 @@ for ip in devices:
     connect = ConnectHandler(**cisco_device)
 
     now = datetime.datetime.now()
-    today = str(now.year) + '/' + str(now.month) + '/' + str(now.day)
-    devices = today + '/' + ip + '.txt'
+    today = str(now.year) + '-' + str(now.month) + '_' + str(now.day)
+    devices = today + '_' + ip + '.txt'
 
     Result = connect.send_command('show running')
     print(Result)
